@@ -47,6 +47,7 @@ public class LetterCombinations {
         for(int i=0; i < val.length(); i++){
             current.append(val.charAt(i));
             solve(digits,current,ans,index+1);
+            // this is for backtracking
             current.deleteCharAt(current.length()-1);
         }
 
