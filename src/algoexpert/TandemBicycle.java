@@ -22,7 +22,6 @@ public class TandemBicycle {
             end--;
         }
     }
-
     public static int tandemBicycle(int[] redShirtSpeeds, int[] blueShirtSpeeds, boolean fastest) {
         Arrays.sort(redShirtSpeeds);
         Arrays.sort(blueShirtSpeeds);

@@ -20,12 +20,12 @@ import java.util.ArrayList;
 
 class TreeNode{
     int val;
-    TreeNode left;
-    TreeNode right;
+    Node left;
+    Node right;
     TreeNode(){}
 }
 class Solution {
-    public TreeNode increasingBST(TreeNode root) {
+    public Node increasingBST(Node root) {
         ArrayList<Integer> arrayList = new ArrayList<Integer>();
         arrayList = inOrder(root);
         root = constructTree(arrayList);
@@ -33,7 +33,7 @@ class Solution {
 
     }
 
-    static public ArrayList<Integer> inOrder(TreeNode root){
+    static public ArrayList<Integer> inOrder(Node root){
         ArrayList<Integer> arrayList = new ArrayList<Integer>();
         if(root == null){
             return null;
@@ -44,8 +44,8 @@ class Solution {
         return arrayList;
     }
 
-    static public TreeNode constructTree(ArrayList<Integer> arrayList){
-        TreeNode rootNode = new TreeNode();
+    static public Node constructTree(ArrayList<Integer> arrayList){
+        Node rootNode = new Node();
         rootNode.val = arrayList.get(0);
         for(int i=1 ; i < arrayList.size(); i++ ){
             rootNode.val = arrayList.get(i);

@@ -1,50 +1,46 @@
-/*
 package algoexpert;
 
 
-*/
-/*class TreeNode {
+class Node {
       int val;
-      TreeNode left;
-      TreeNode right;
-      TreeNode() {}
-      TreeNode(int val) { this.val = val; }
-      TreeNode(int val, TreeNode left, TreeNode right) {
+      Node left;
+      Node right;
+      Node() {}
+      Node(int val) { this.val = val; }
+      Node(int val, Node left, Node right) {
           this.val = val;
           this.left = left;
           this.right = right;
       }
-  }*//*
+  }
 
+class DeleteBST {
 
-
-class Solution {
-
-   */
-/* public static void main(String args[]){
-        TreeNode node = new TreeNode();
+ public static void main(String args[]){
+        Node node = new Node();
         node.val = 5;
-        node.left = new TreeNode(3);
-        node.left.left = new TreeNode(2);
-        node.left.right = new TreeNode(4);
+        node.left = new Node(3);
+        node.left.left = new Node(2);
+        node.left.right = new Node(4);
 
-        node.right = new TreeNode(6);
-        node.right.right = new TreeNode(7);
+        node.right = new Node(6);
+        node.right.right = new Node(7);
 
         node = deleteTreeNode(node,7);
         inorder(node);
     }
 
-    public static TreeNode deleteTreeNode(TreeNode root, int key) {
+    public static Node deleteTreeNode(Node root, int key) {
 
+        Node parent = root;
         if(root == null){
             return root;
         }
         else if(key < root.val){
-            deleteTreeNode(root.left,key);
+            root.left = deleteTreeNode(root.left,key);
         }
         else if(key > root.val){
-            deleteTreeNode(root.right,key);
+            root.right = deleteTreeNode(root.right,key);
         }
         else{
             if(root.left == null){
@@ -59,24 +55,24 @@ class Solution {
         return root;
     }
 
-    static int findMinTreeNode(TreeNode root){
+    static int findMinTreeNode(Node root){
         int minVal =0;
-        TreeNode currentTreeNode = root.right;
-        while(currentTreeNode!=null && currentTreeNode.left != null){
-            minVal = currentTreeNode.val;
-            findMinTreeNode(currentTreeNode.left);
+        Node currentNode = root.right;
+        while(currentNode !=null && currentNode.left != null){
+            minVal = currentNode.val;
+            findMinTreeNode(currentNode.left);
         }
-        return currentTreeNode.val;
+        return currentNode.val;
     }
 
-    public static void inorder(TreeNode root){
+    public static void inorder(Node root){
         if(root!=null){
             inorder(root.left);
             System.out.print(root.val+" ");
             inorder(root.right);
 
         }
-    }*//*
+    }
 
 
     static class Program {
@@ -143,4 +139,4 @@ class Solution {
         }
     }
 
-}*/
+}

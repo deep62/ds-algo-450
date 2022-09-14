@@ -2,11 +2,11 @@ package algoexpert;
 
 class TreeNode1 {
      int val;
-      TreeNode right;
+      Node right;
       TreeNode1() {}
       TreeNode1(int val) { this.val = val; }
-      TreeNode left;
-      TreeNode1(int val, TreeNode left, TreeNode right) {
+      Node left;
+      TreeNode1(int val, Node left, Node right) {
           this.val = val;
           this.left = left;
           this.right = right;
@@ -14,7 +14,7 @@ class TreeNode1 {
   }
 public class ValidateBST {
 
-        public boolean isValidBST(TreeNode root) {
+        public boolean isValidBST(Node root) {
             if(root == null){
                 return true;
             }
